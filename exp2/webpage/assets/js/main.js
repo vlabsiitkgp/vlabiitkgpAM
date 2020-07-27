@@ -18,13 +18,14 @@
 			var E = voltage * current * pot;
 			var Tc = (50) * Math.log(Vo/(Vo-voltage));
 			var power = E / (Tc) ;
-			
+
 			var ea = eb - ((Math.random() * 0.6) + 0.3).toFixed(6);
 			var ta = tb - ((Math.random() * 0.4) + 0.2).toFixed(6);
 			var mrr = ((27.4/1000) * Math.pow(power,1.54)).toFixed(6);
 			var mt = ((78.54 * depth) / mrr).toFixed(2);
-			var ewr = (tb - ta) / mt;
-		
+			var EWR = ((eb - ea) / (100* mt)).toFixed(4);
+			var MRR = ((tb - ta) / (100* mt)).toFixed(4);
+
 			var timesRun = 0;
 			var interval =	setInterval(function () {
 					$('#slideshow > div:first')
@@ -33,15 +34,15 @@
 						.show()
 						.end()
 						.appendTo('#slideshow');
-					timesRun += 1;	
+					timesRun += 1;
 					if(timesRun === 36){
 						clearInterval(interval);
 						$(".ea_value b").html(ea+" gms");
 						$(".ta_value b").html(ta+" gms");
 						$(".mt_value b").html(mt+" min");
-						//$(".mrr_value b").html("(Wb - Wa)/T gm/min");
-						//$(".ewr_value b").html("(Eb - Ea)/T gm/min");
-					}	
+						//$(".mrr_value b").html(MRR+" gm/min");
+						//$(".ewr_value b").html(EWR+" gm/min");
+					}
 				}, 600);
 		}
 	});
@@ -92,17 +93,17 @@
 		  controlMax = control.attr('max'),
 		  controlVal = control.val(),
 		  controlThumbWidth = control.data('thumbwidth');
-	  
+
 		var range = controlMax - controlMin;
-		
+
 		var position = ((controlVal - controlMin) / range) * 100;
 		var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
 		var output = control.next('output');
-		
+
 		output
 		  .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
 		  .text(controlVal);
-	  
+
 	});
 
 

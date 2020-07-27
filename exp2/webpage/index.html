@@ -30,23 +30,23 @@
 				<header>
 					<h4>EDM Simulator</h4>
 				</header>
-				
+
 				<a>Material: Stainless Steel</a>&nbsp;&nbsp;<br>
 				<a>Electrode: Copper</a>&nbsp;&nbsp;<br>
 				<a>Dielectric: EDM Oil</a>&nbsp;&nbsp;<br>
 				<a>Diameter of Electrode: 10 mm</a>&nbsp;&nbsp;
 				<br><br>
 
-				<p><b>Input Variables: </b></p>
+
 				<p>Weight of electrode before machining (Eb) <input class="eb_value" type="number" name="quantity"
 						min="1"> (gms)</p>
-				
+
 				<p>Weight of work piece before machining (Wb) <input class="tb_value" type="number" name="quantity"
 						min="1">(gms)
 				</p>
-				
+
 				<div class="row">
-					<div class="col-4 p0">	
+					<div class="col-4 p0">
 						<p>Depth (mm):</p>
 					</div>
 					<div class="range-control col-8 p0">
@@ -54,9 +54,9 @@
 						<output name="rangeVal">1</output>
 					</div>
 				</div>
-				
+
 				<div class="row">
-					<div class="col-4 p0">	
+					<div class="col-4 p0">
 						<p>Peak Current (A):</p>
 					</div>
 					<div class="range-control col-8 p0">
@@ -64,17 +64,17 @@
 						<output name="rangeVal">4</output>
 					</div>
 				</div>
-				
+
 				<div class="row">
-					<div class="col-4 p0">	
+					<div class="col-4 p0">
 						<p>Voltage (V):</p>
-					</div>	
+					</div>
 					<div class="range-control col-8 p0">
 						<input id="voltage" type="range" min="40" max="60" step="1" value="40" data-thumbwidth="1">
 						<output name="rangeVal">40</output>
 					</div>
 				</div>
-				
+
 				<div class="row">
 					<div class="col-4 p0">
 						<p>Pulse On Time (&#181s):</p>
@@ -84,7 +84,7 @@
 						<output name="rangeVal">50</output>
 					</div>
 				</div>
-				
+
 				<button id="submit_values" type="button">Submit</button>
 			</div>
 		</div>
@@ -137,10 +137,10 @@
 			<p>Machining time(T) = <span class="mt_value"><b></b></span></p>
 			<br>
 			<div class="left output-box">
-				<p class="mrr_value">MRR = (Wb - Wa)/T (gm/min)<b></b></p>
+				<p class="mrr_value">MRR = (Wb - Wa)/T gm/min</p>
 			</div>
 			<div class="output-box">
-				<p class="ewr_value">EWR = (Eb - Ea)/T (gm/min)<b></b></p>
+				<p class="ewr_value">EWR = (Eb - Ea)/T gm/min </p>
 			</div>
 		</div>
 	</div>
@@ -148,7 +148,7 @@
 	<!-- Footer -->
 	<footer id="footer">
 		<div class="copyright">
-			&copy; Mechanical Formulas.
+			&copy; Virtual Labs, IIT KGP
 		</div>
 	</footer>
 
