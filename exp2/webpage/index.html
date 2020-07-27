@@ -13,6 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 </head>
 
 <body class="is-preload">
@@ -23,31 +24,71 @@
 	</header>
 
 	<!-- Highlights -->
-	<section class="wrapper">
-		<div class="inner">
-			<div class="Calculator-icon left">
-				<a href="#" class="icon fa-calculator"><span class="label">Icon</span></a>
-			</div>
-			<div class="right">
+	<div class="row">
+		<div class="col-md-4 col-lg-4">
+			<div>
 				<header>
-					<h3>MRR & EWR Calculator</h3>
+					<h4>EDM Simulator</h4>
 				</header>
-				<p>Input Variables: Ip, Vg, Ton</p>
-				<a>Ip: 6 Amp</a>&nbsp;&nbsp;
-				<a>Vg: 60 Volt</a>&nbsp;&nbsp;
-				<a>Ton: 50 sec</a>&nbsp;&nbsp;
+				
+				<a>Material: Stainless Steel</a>&nbsp;&nbsp;<br>
+				<a>Electrode: Copper</a>&nbsp;&nbsp;<br>
+				<a>Dielectric: EDM Oil</a>&nbsp;&nbsp;<br>
+				<a>Diameter of Electrode: 10 mm</a>&nbsp;&nbsp;
 				<br><br>
+
+				<p><b>Input Variables: </b></p>
 				<p>Weight of electrode before machining (Eb) <input class="eb_value" type="number" name="quantity"
 						min="1"> (gms)</p>
-				<br>
-				<p>Weight of tool before machining (Tb) <input class="tb_value" type="number" name="quantity" min="1">(gms)
+				
+				<p>Weight of work piece before machining (Wb) <input class="tb_value" type="number" name="quantity"
+						min="1">(gms)
 				</p>
-				<p>Depth = <span><b><u>3 mm</u></b></span></p>
-				<br>
+				
+				<div class="row">
+					<div class="col-4 p0">	
+						<p>Depth (mm):</p>
+					</div>
+					<div class="range-control col-8 p0">
+						<input id="depth" type="range" min="1" max="10" step="1" value="1" data-thumbwidth="1">
+						<output name="rangeVal">1</output>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-4 p0">	
+						<p>Peak Current (A):</p>
+					</div>
+					<div class="range-control col-8 p0">
+						<input id="current" type="range" min="4" max="10" step="1" value="4" data-thumbwidth="1">
+						<output name="rangeVal">4</output>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-4 p0">	
+						<p>Voltage (V):</p>
+					</div>	
+					<div class="range-control col-8 p0">
+						<input id="voltage" type="range" min="40" max="60" step="1" value="40" data-thumbwidth="1">
+						<output name="rangeVal">40</output>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-4 p0">
+						<p>Pulse On Time (&#181s):</p>
+					</div>
+					<div class="range-control col-8 p0">
+						<input id="pot" type="range" min="50" max="100" step="1" value="50" data-thumbwidth="1">
+						<output name="rangeVal">50</output>
+					</div>
+				</div>
+				
 				<button id="submit_values" type="button">Submit</button>
 			</div>
 		</div>
-		<header class="special">
+		<div class="col-md-4 col-lg-4 col-center">
 			<!--<h2>Electric Discharge Machining Video</h2> -->
 			<div id="slideshow">
 				<div><img src="images/1.png" data-fullscreen-image="images/1.png" /></div>
@@ -87,23 +128,22 @@
 				<div><img src="images/35.png" data-fullscreen-image="images/35.png" /></div>
 				<div><img src="images/36.png" data-fullscreen-image="images/36.png" /></div>
 			</div>
-		</header>
+		</div>
 
-		<div class="inner output-values">
+		<div class="col-md-4 col-lg-4 col-cl">
 			<br>
-			<p> <u>Results:</u></p>
 			<p>Weight of electrode after machining (Ea) = <span class="ea_value"><b></b></span></p>
-			<p>Weight of tool after machining (Ta) = <span class="ta_value"><b></b></span></p>
-			<p>Machining time = <span class="mt_value"><b></b></span></p>
+			<p>Weight of work piece after machining (Wa) = <span class="ta_value"><b></b></span></p>
+			<p>Machining time(T) = <span class="mt_value"><b></b></span></p>
 			<br>
 			<div class="left output-box">
-				<p class="mrr_value">MRR = <b></b></p>
+				<p class="mrr_value">MRR = (Wb - Wa)/T (gm/min)<b></b></p>
 			</div>
 			<div class="output-box">
-				<p class="ewr_value">EWR = <b></b></p>
+				<p class="ewr_value">EWR = (Eb - Ea)/T (gm/min)<b></b></p>
 			</div>
 		</div>
-	</section>
+	</div>
 
 	<!-- Footer -->
 	<footer id="footer">
@@ -114,6 +154,7 @@
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
