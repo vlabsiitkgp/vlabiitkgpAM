@@ -1,0 +1,14 @@
+var answers = {
+  question1: "true",
+  question2: "true",
+  question3: "true",
+  question4: "true",
+}
+$("#button").click(function() {
+  $.each(answers, function(id, value) {
+    var selector = $("#" + id),
+      correct = selector.find(":checked").val() === value;
+    console.log(id, value, correct)
+    selector.css("background-color",correct?"green":"red")
+  })
+});
