@@ -5,8 +5,25 @@
 */
 (function ($) {
 
+	var copyRightHTML = '<div class="copyright">&copy; Tatikonda Sree Lakshmi, Research Engineer, VLabs IITKGP.</div>';
+	$("#footer").append(copyRightHTML);
+
+	$(document).on("change", "#polarity", function () {
+		if($('#polarity').val() == "normal"){
+			$("#slideshow").show();
+			$("#slideshow > div:gt(0)").hide();
+			$("#slideshowReverse").hide();
+		}
+		else{
+			$("#slideshowReverse").show();
+			$("#slideshowReverse > div:gt(0)").hide();
+			$("#slideshow").hide();
+		}
+	});
+
 	$(document).on("click", "#submit_values", function () {
 		if ($(".eb_value").val() != "" && $(".eb_value").val() != undefined && $(".tb_value").val() != "" && $(".tb_value").val() != undefined) {
+			var isNormalPolarity = ($('#polarity').val() == "normal")?true:false;
 			var eb = parseInt($(".eb_value").val());
 			var tb = parseInt($(".tb_value").val());
 			var voltage = parseInt($('#voltage').val());
@@ -17,35 +34,44 @@
 			var Vo = voltage + (20+10*Math.random());
 			var E = voltage * current * pot;
 			var Tc = (50) * Math.log(Vo/(Vo-voltage));
-			var power = E / (Tc) ;
+			var power = E / Tc ;
 
-			var ea = eb - ((Math.random() * 0.6) + 0.3).toFixed(6);
-			var ta = tb - ((Math.random() * 0.4) + 0.2).toFixed(6);
-			var mrr = ((27.4/1000) * Math.pow(power,1.54)).toFixed(6);
-			var mt = ((78.54 * depth) / mrr).toFixed(2);
-			var EWR = ((eb - ea) / (100* mt)).toFixed(4);
-			var MRR = ((tb - ta) / (100* mt)).toFixed(4);
+			var ea = (isNormalPolarity)? (eb - ((Math.random() * 0.6) + 0.3).toFixed(6)) : ((eb - ((Math.random() * 0.6) + 0.3)*0.5).toFixed(6));
+			var ta = (isNormalPolarity)? (tb - ((Math.random() * 0.4) + 0.2).toFixed(6)) : ((tb - ((Math.random() * 0.4) + 0.2)*getRandomArbitrary(0.4,0.11)).toFixed(6));
+			var mrr = (27.4/10000 * Math.pow(power,1.54)).toFixed(6);
+			var mt = (isNormalPolarity)? (((78.54 * depth) / mrr).toFixed(4)): (((78.54 * depth) / mrr)*3.3).toFixed(4);
+			var ewr = (tb - ta) / mt;
 
 			var timesRun = 0;
 			var interval =	setInterval(function () {
-					$('#slideshow > div:first')
+					(isNormalPolarity)? $('#slideshow > div:first')
 						.hide()
 						.next()
 						.show()
 						.end()
-						.appendTo('#slideshow');
+						.appendTo('#slideshow')  :
+						$('#slideshowReverse > div:first')
+						.hide()
+						.next()
+						.show()
+						.end()
+						.appendTo('#slideshowReverse');
 					timesRun += 1;
 					if(timesRun === 36){
 						clearInterval(interval);
 						$(".ea_value b").html(ea+" gms");
 						$(".ta_value b").html(ta+" gms");
 						$(".mt_value b").html(mt+" min");
-						//$(".mrr_value b").html(MRR+" gm/min");
-						//$(".ewr_value b").html(EWR+" gm/min");
+						//$(".mrr_value b").html("(Wb - Wa)/T gm/min");
+						//$(".ewr_value b").html("(Eb - Ea)/T gm/min");
 					}
 				}, 600);
 		}
 	});
+
+	function getRandomArbitrary(min, max) {
+	  return Math.random() * (max - min) + min;
+	}
 
 	var $window = $(window),
 		$banner = $('#banner'),
@@ -85,6 +111,7 @@
 		});
 
 	$("#slideshow > div:gt(0)").hide();
+	$("#slideshowReverse").hide();
 
 	$('input[type="range"]').on('input', function() {
 
