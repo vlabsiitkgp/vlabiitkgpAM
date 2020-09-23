@@ -36,14 +36,14 @@
 			var Tc = (50) * Math.log(Vo/(Vo-voltage));
 			var power = E / Tc ;
 
-			var ea = (isNormalPolarity)? (eb - ((Math.random() * 0.6) + 0.3).toFixed(6)) : ((eb - ((Math.random() * 0.6) + 0.3)*0.5).toFixed(6));
-			var ta = (isNormalPolarity)? (tb - ((Math.random() * 0.4) + 0.2).toFixed(6)) : ((tb - ((Math.random() * 0.4) + 0.2)*getRandomArbitrary(0.4,0.11)).toFixed(6));
-			var mrr = (27.4/10000 * Math.pow(power,1.54)).toFixed(6);
+			var ea = (isNormalPolarity)? (eb - ((Math.random() * 0.6) + 0.3).toFixed(4)) : ((eb - ((Math.random() * 0.6) + 0.3)*0.5).toFixed(4));
+			var ta = (isNormalPolarity)? (tb - ((Math.random() * 0.4) + 0.2).toFixed(4)) : ((tb - ((Math.random() * 0.4) + 0.2)*getRandomArbitrary(0.4,0.11)).toFixed(4));
+			var mrr = (27.4/10000 * Math.pow(power,1.54)).toFixed(4);
 			var mt = (isNormalPolarity)? (((78.54 * depth) / mrr).toFixed(4)): (((78.54 * depth) / mrr)*3.3).toFixed(4);
 			var ewr = (tb - ta) / mt;
 			if(current > 10) {
 				ea += 0.25;
-				ta -= 0.25;
+				ta -= 0.15;
 			}
 			var timesRun = 0;
 			var interval =	setInterval(function () {
