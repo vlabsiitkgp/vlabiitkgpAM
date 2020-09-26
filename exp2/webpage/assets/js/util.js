@@ -1,6 +1,7 @@
 (function($) {
 
 	/**
+	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
 	 */
 	$.fn.navList = function() {
@@ -134,7 +135,7 @@
 
 				};
 
-
+			// Vendor fixes.
 				$this
 					.css('-ms-overflow-style', '-ms-autohiding-scrollbar')
 					.css('-webkit-overflow-scrolling', 'touch');
@@ -162,7 +163,8 @@
 							// Hide panel.
 								$this._hide();
 
-							window.setTimeout(function() {
+							// Redirect to href.
+								window.setTimeout(function() {
 
 									if (target == '_blank')
 										window.open(href);
@@ -279,6 +281,8 @@
 
 				});
 
+		// Window.
+
 			// Event: Hide on ESC.
 				if (config.hideOnEscape)
 					$window.on('keydown', function(event) {
@@ -292,11 +296,13 @@
 
 	};
 
-	  @return {jQuery}
-
+	/**
+	 * Apply "placeholder" attribute polyfill to one or more forms.
+	 * @return {jQuery} jQuery object.
+	 */
 	$.fn.placeholder = function() {
 
-		
+		// Browser natively supports placeholders? Bail.
 			if (typeof (document.createElement('input')).placeholder != 'undefined')
 				return $(this);
 
