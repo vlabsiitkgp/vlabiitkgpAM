@@ -1,4 +1,4 @@
-// vendor.scss v0.1-dev  */
+
 
 // Vars.
 
@@ -12,7 +12,7 @@
 	);
 
 	/// Properties that should be vendorized.
-	
+
 	/// @var {list}
 	$vendor-properties: (
 
@@ -193,7 +193,6 @@
 	);
 
 	/// Values that should be vendorized.
-	/// Data via caniuse.com, github.com/postcss/autoprefixer, and developer.mozilla.org
 	/// @var {list}
 	$vendor-values: (
 

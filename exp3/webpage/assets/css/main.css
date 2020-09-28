@@ -1,7 +1,6 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600");
 
-/* Basic */
 @-ms-viewport {
   width: device-width; }
 body {
@@ -2903,6 +2902,11 @@ input[type=range]:active + output {
   margin-left: 10px;
 }
 
+
+.mt-10{
+  margin-top: 10px;
+}
+
 .row{
   padding: 20px;
 }
@@ -2919,4 +2923,10 @@ input[type=range]:active + output {
 .col-cl{
   margin-top: 7%;
   text-align: left;
+}
+
+.bt-ft{
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
 }

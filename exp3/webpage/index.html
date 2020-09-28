@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Fiber Laser Cutting of Stainless Steel Sheet Simulator</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="index.html">Fiber Laser Cutting of Stainless Steel Sheet</a>
+	</header>
+
+	<!-- Highlights -->
+	<div class="row">
+		<div class="col-md-4 col-lg-4">
+			<div>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-4 p0">
+						<p>Laser Power (W) :</p>
+					</div>
+					<div class="col-8 p0">
+						<select name="laser_power" id="laser_power">
+						  <option value="800">800</option>
+						  <option value="900">900</option>
+						  <option value="1000">1000</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4 p0">
+						<p>Laser Scan Speed (mm/min) :</p>
+					</div>
+					<div class="col-8 p0">
+						<select name="laser_scan_speed" id="laser_scan_speed">
+						  <option value="3000">3000</option>
+						  <option value="4000">4000</option>
+						  <option value="5000">5000</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4 p0">
+						<p>SOD (mm) :</p>
+					</div>
+					<div class="col-8 p0">
+						<select name="sod" id="sod">
+						  <option value="1">1</option>
+						  <option value="1.75">1.75</option>
+						  <option value="2.5">2.5</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4 p0">
+						<p>Gas Pressure (bar) :</p>
+					</div>
+					<div class="col-8 p0">
+						<select name="gas_pressure" id="gas_pressure">
+						  <option value="3">3</option>
+						  <option value="4">4</option>
+						  <option value="5">5</option>
+						</select>
+					</div>
+				</div>
+				<button id="submit_values" type="button">Submit</button>
+
+				<p class="error_html mt-10"> </p>
+			</div>
+		</div>
+		<div class="col-md-4 col-lg-4 col-center">
+			<!--<h2>Machine Photo</h2> -->
+			<div id="slideshow">
+				<div><img src="images/lc.png" data-fullscreen-image="images/lc.png" /></div>
+			</div>
+		</div>
+
+		<div class="col-md-4 col-lg-4 col-cl">
+
+			<div class="left output-box">
+				<b>Kerf Width Top (micron)=</b> <p class="kwt"></p>
+			</div>
+			<div class="output-box">
+				<b>Kerf Width Bottom (micron)= </b><p class="kwb"></p>
+			</div>
+			<div class="output-box">
+				<b>Taper angle = tan<sup>-1</sup> [(Upper kerf width – lower kerf width)/ (2* sheet thickness)] </b><p class=""></p>
+			</div>
+			<div class="output-box">
+				<b>Severance energy of cutting = P<sub>L</sub>/v.t = w.ρ.[C<sub>p</sub>. (T<sub>m</sub> – T<sub>o</sub> ) + L<sub>f</sub>]/A </b><p class=""></p>
+			</div>
+			</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="bt-ft">
+		<div class="copyright">
+			&copy;Virtual Labs, IIT KGP
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
