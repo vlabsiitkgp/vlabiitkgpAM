@@ -1,0 +1,47 @@
+
+#main-wrapper{
+    border-radius: 5px;
+    background-color: lightgrey;
+    width: 870px;
+    height: 530px;
+    padding: 5px;
+    border: 2px solid navy;
+    margin: 10px;
+
+}
+#canvas3d-wrapper{
+    float: left;
+    width: 800px;
+}
+#canvas3d-title, #controller-title, #graph-title{
+    height: 25px;
+    color: #638EA8;
+    background-color: #E4EAED;
+    border-top: 1px #85A8C2 solid;
+    border-right: 1px #85A8C2 solid;
+    border-bottom: 1px #85A8C2 solid;
+    border-left: 1px #85A8C2 solid;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+#canvas3d-view{
+    color: #638EA8;
+    height: 500px;
+
+
+}
+#controller-graph-wrapper{
+    padding-left: 405px;
+}
+#controller-wrapper{}
+#graph-wrapper{}
+#controller-view{
+    height: 600px;
+
+
+}
+#graph-view{
+    height: 200px;
+
+}

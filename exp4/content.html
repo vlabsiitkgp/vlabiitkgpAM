@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+
+
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+        <script type="text/javascript" src="./js/three.min.js"></script>
+        <script type="text/javascript" src="./js/TrackballControls.js"></script>
+
+        <script type="text/javascript" src="./js/stats.min.js"></script>
+
+        <script type="text/javascript" src="./js/axis.js"></script>
+
+
+        <style>
+
+            #myTable, th, td{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body onload="myFunction()">
+        <div id="wrapperfull" style="background: blanchedalmond; border: 2px"  >
+
+        <div>  <input type="text" name="size1" size="2" value="0" id="th1">
+      <input type="button" value="START" onclick="startCount();">
+      <input type="button" value="STOP" onclick="stop();">
+      <input type="button" value="Tool Y Position Set" onclick="Tool_motion_y();">
+      <input type="button" value="Tool X Position Set" onclick="Tool_motion_x();">
+    </div>
+                <div id="canvas3d-wrapper">
+                    <div id="canvas3d-title">Simulator</div>
+                    <div id="canvas3d-view"></div>
+                </div>
+
+            </div>
+
+        </div>
+<script>
+
+var CNC = {
+    scene: null,
+    camera: null,
+    container: null,
+    stats: null,
+    controls: null,
+    renderer: null,
+    CONTAINER_WIDTH: null,
+    CONTAINER_HEIGHT: null,
+    link2Mesh: null,
+    Link3Mesh: null,
+    Link4Mesh: null,
+    CylinderL2: null,
+    CylinderL5: null,
+    CylinderL6: null,
+    Cylinder4L5: null,
+    Cylinder3L5: null,
+    BoxL5: null,
+    Cylinder2L1: null,
+    init: function () {
+
+// create main scene
+        this.scene = new THREE.Scene();
+        this.container = document.getElementById("canvas3d-view");
+        this.scene.position.set(0, 0, 0);
+        this.CONTAINER_WIDTH = this.container.offsetWidth;
+        this.CONTAINER_HEIGHT = this.container.offsetHeight;
+
+//  renderer
+        this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: false});
+        this.renderer.setSize(this.CONTAINER_WIDTH, this.CONTAINER_HEIGHT);
+        this.renderer.setClearColor(0x000000, 1); // Set the background color of the canvas to black
+        this.renderer.shadowMapEnabled = true;
+        this.renderer.shadowMapSoft = true;
+        this.container.appendChild(this.renderer.domElement);
+
+// camera
+        var VIEW_ANGLE = 45, ASPECT = this.CONTAINER_WIDTH / this.CONTAINER_HEIGHT, NEAR = 1, FAR = 10000;
+        this.camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+        //this.camera.position.z = 500;
+        this.camera.position.set(400, 200, 1500);   //
+        //this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+        this.camera.lookAt(this.scene.position);
+//        this.scene.add(this.camera);
+//
+        // And some sort of controls to move around
+        // We'll use one of THREE's provided control classes for simplicity
+        this.controls = new THREE.TrackballControls(this.camera);
+
+        this.controls.rotateSpeed = 1.0;
+        this.controls.zoomSpeed = 1.2;
+        this.controls.panSpeed = 0.8;
+
+        this.controls.noZoom = false;
+        this.controls.noPan = false;
+
+        this.controls.staticMoving = true;
+        this.controls.dynamicDampingFactor = 0.3;
+
+        this.controls.keys = [65, 83, 68];
+        this.controls.enabled = false;
+        // this.controls.addEventListener('change', render);
+
+// Stats preparing
+        this.stats = new Stats();
+        this.stats.domElement.style.position = 'absolute';
+        this.stats.domElement.style.top = '60px';
+        this.container.appendChild(this.stats.domElement);
+
+// scene
+
+// Add axes, The X axis is red. The Y axis is green. The Z axis is blue.
+        axes = buildAxes(200);
+        //axes.position = mesh.position;
+        this.scene.add(axes);
+
+
+// create geometries
+//create link1
+        Cylinder1 = new THREE.Mesh(new THREE.CylinderGeometry(190, 190, 90, 100), new THREE.MeshNormalMaterial());
+        Cylinder1.position.set(0, 0, 0);
+		Cylinder1.rotation.z = Math.PI/2;
+      this.scene.add(Cylinder1);
+// This is the rotaing head
+      Cylinder2 = new THREE.Mesh(new THREE.CylinderGeometry(130, 130, 90, 100), new THREE.MeshBasicMaterial( { color: 0x00ff00 } ));
+	  Cylinder2.position.set(0, -10, 0);
+          Cylinder1.add(Cylinder2);
+
+
+        Box1 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+		Box1.rotation.x = Math.PI/2;
+		Box1.position.set(100, 0, 0);
+		  Cylinder2.add(Box1);
+
+      Box2 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box2.rotation.x = Math.PI/2;
+    Box2.rotation.z = Math.PI/4;
+    Box2.position.set(70, 0, 75);
+    Cylinder2.add(Box2);
+
+    Box3 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box3.rotation.x = Math.PI/2;
+    Box3.position.set(0, 0, 100);
+    Cylinder2.add(Box3);
+
+    Box4 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box4.rotation.x = Math.PI/2;
+    Box4.rotation.z = Math.PI/4;
+    Box4.position.set(-70, 0, 75);
+    Cylinder2.add(Box4);
+
+    Box5 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box5.rotation.x = Math.PI/2;
+    //Box5.rotation.z = Math.PI/4;
+    Box5.position.set(-100, 0, 0);
+    Cylinder2.add(Box5);
+
+    Box6 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box6.rotation.x = Math.PI/2;
+    //Box6.rotation.z = Math.PI/4;
+    Box6.position.set(0, 0, -100);
+    Cylinder2.add(Box6);
+
+    Box7 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box7.rotation.x = Math.PI/2;
+    Box7.rotation.z = Math.PI/4;
+    Box7.position.set(-70, 0, -75);
+    Cylinder2.add(Box7);
+
+    Box8 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+    Box8.rotation.x = Math.PI/2;
+    Box8.rotation.z = Math.PI/4;
+    Box8.position.set(70, 0, -75);
+    Cylinder2.add(Box8);
+
+    Cylinder3 = new THREE.Mesh(new THREE.CylinderGeometry(80, 80, 200, 100), new THREE.MeshBasicMaterial( { color: 0xff0000 } ));
+    Cylinder3.position.set(0, -90, 0);
+        Cylinder2.add(Cylinder3);
+
+    Box9 = new THREE.Mesh(new THREE.BoxGeometry(20, 1500, 400), new THREE.MeshNormalMaterial());
+    //Box9.rotation.x = Math.PI/2;
+    Box9.rotation.z = Math.PI/2;
+    Box9.position.set(400, -400, 0);
+    this.scene.add(Box9);
+
+    Box10 = new THREE.Mesh(new THREE.BoxGeometry(800, 20, 300), new THREE.MeshNormalMaterial());
+    Box10.position.set(400, 550, 0);
+    Box9.add(Box10);
+
+    Box11 = new THREE.Mesh(new THREE.BoxGeometry(500, 150, 300), new THREE.MeshNormalMaterial());
+    Box11.position.set(0, -60, 0 );
+    Box10.add(Box11);
+
+    Box12 = new THREE.Mesh(new THREE.BoxGeometry(800, 20, 300), new THREE.MeshNormalMaterial());
+    Box12.position.set(0, -1000, 0 );
+    Box11.add(Box12);
+
+    Box13 = new THREE.Mesh(new THREE.BoxGeometry(20, 1100, 400), new THREE.MeshNormalMaterial());
+    Box13.position.set(400, 550, 0 );
+    Box12.add(Box13);
+
+    Box14 = new THREE.Mesh(new THREE.BoxGeometry(800, 300, 400), new THREE.MeshNormalMaterial());
+    Box14.position.set(-400, 600, 0 );
+    Box13.add(Box14);
+
+
+    var texture = new THREE.TextureLoader().load( 'p1.png' );
+
+    Box15 = new THREE.Mesh(new THREE.BoxGeometry(200, 150 , 100), new THREE.MeshBasicMaterial( { map: texture } ));
+    Box15.position.set(200, -1080, -100 );
+    Box14.add(Box15);
+
+    Sphere1 = new THREE.Mesh(new THREE.SphereGeometry(80, 100, 350), new THREE.MeshNormalMaterial());
+        Box15.add(Sphere1);
+        Sphere1.rotation.z = -Math.PI/2;
+        Sphere1.position.set(0, 130, 0);
+
+    Box16 = new THREE.Mesh(new THREE.BoxGeometry(30, 80 , 40), new THREE.MeshNormalMaterial());
+    Box16.position.set(0, 120, 0 );
+    Sphere1.add(Box16);
+
+    Box17 = new THREE.Mesh(new THREE.BoxGeometry(30, 80 , 40), new THREE.MeshNormalMaterial());
+    Box17.position.set(-80, 80, 0 );
+    Box17.rotation.z = Math.PI/4;
+    Sphere1.add(Box17);
+
+    Box18 = new THREE.Mesh(new THREE.BoxGeometry(30, 80 , 40), new THREE.MeshNormalMaterial());
+    Box18.position.set(-120, 0, 0 );
+    Box18.rotation.z = Math.PI/2;
+    Sphere1.add(Box18);
+
+    Box19 = new THREE.Mesh(new THREE.BoxGeometry(30, 80 , 40), new THREE.MeshNormalMaterial());
+    Box19.position.set(-80, -80, 0 );
+    Box19.rotation.z = Math.PI/1.33;
+    Sphere1.add(Box19);
+
+    Box20 = new THREE.Mesh(new THREE.BoxGeometry(30, 80 , 40), new THREE.MeshNormalMaterial());
+    Box20.position.set(0, -120, 0 );
+    Sphere1.add(Box20);
+
+    Box21 = new THREE.Mesh(new THREE.BoxGeometry(100, 1100 , 300), new THREE.MeshNormalMaterial());
+    Box21.position.set(-270, -350, 0 );
+    Box21.rotation.z = Math.PI/2;
+    Box20.add(Box21);
+
+
+  //Box2 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
+  //Box2.rotation.x = Math.PI/2;
+  //Box2.position.set(60, 0, 75);
+  //Cylinder2.add(Box2);
+
+        this.container.addEventListener('mouseover', onContainerMouseOver, false);
+        this.container.addEventListener('mouseout', onContainerMouseOut, false);
+
+
+    }
+};
+function onContainerMouseOver() {
+    CNC.controls.enabled = true;
+}
+function onContainerMouseOut() {
+    CNC.controls.enabled = false;
+}
+// Animate the scene
+function animate() {
+    requestAnimationFrame(animate);
+    update();
+    render();
+
+	//var t1 = document.getElementById("th1").value;
+	//Cylinder2.rotation.y += t1*(Math.PI / 180);
+}
+   var animate2 ;
+function motion() {
+
+	var t1 = document.getElementById("th1").value;
+	Cylinder2.rotation.y += t1*(Math.PI / 180);
+	animate2 = setTimeout(motion, 50);
+	//requestAnimationFrame(animate);
+  //Box15.position.y += t1*0.5;
+    update();
+    render();
+}
+
+function Tool_motion_y() {
+
+	var t1 = document.getElementById("th1").value;
+	//Cylinder2.rotation.y += t1*(Math.PI / 180);
+  Box15.position.y += t1*0.5; //for horizantal motion
+  //Box15.position.x += -t1*0.5;
+	animate2 = setTimeout(Tool_motion_y, 50);
+	//requestAnimationFrame(animate);
+
+    update();
+    render();
+}
+function Tool_motion_x() {
+
+	var t1 = document.getElementById("th1").value;
+	//Cylinder2.rotation.y += t1*(Math.PI / 180);
+  //Box15.position.y += t1*0.5; //for horizantal motion
+  Box15.position.x += -t1*0.5;
+	animate2 = setTimeout(Tool_motion_x, 50);
+	//requestAnimationFrame(animate);
+
+    update();
+    render();
+}
+
+var timer_is_on = 0;
+
+function startCount() {
+  if (!timer_is_on) {
+    timer_is_on = 1;
+    motion();
+  }
+}
+
+function stop() {
+ clearTimeout(animate2);
+ timer_is_on = 0;
+               //t1=0;
+
+ }
+
+// Update controls and stats
+function update() {
+//    AXISCubeScene.controls.update(AXISCubeScene.clock.getDelta());
+    CNC.controls.update();
+    CNC.stats.update();
+}
+
+// Render the scene
+function render() {
+    if (CNC.renderer) {
+        CNC.renderer.render(CNC.scene, CNC.camera);
+    }
+
+}
+
+function initializeSimulation() {
+    CNC.init();
+    animate();
+}
+//  action will take place when windo resize
+function onWindowResize() {
+    console.log(Date() + " resize");
+}
+if (window.addEventListener) {
+    window.addEventListener('load', initializeSimulation, false);
+    //    window.addEventListener('resize', onWindowResize, false);
+} else if (window.attachEvent) {
+    window.attachEvent('onload', initializeSimulation);
+} else {
+    window.onload = initializeSimulation;
+}
+</script>
+    </body>
+</html>
