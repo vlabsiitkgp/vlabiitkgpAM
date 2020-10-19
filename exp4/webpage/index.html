@@ -265,7 +265,7 @@ function Tool_motion_y() {
 
 	var t1 = document.getElementById("th1").value;
 	//Cylinder2.rotation.y += t1*(Math.PI / 180);
-  Box16.position.y += -t1*0.5; //for horizantal motion
+  Box15.position.y += -t1*0.5; //for horizantal motion
   //Box15.position.x += -t1*0.5;
 	animate2 = setTimeout(Tool_motion_y, 50);
 	//requestAnimationFrame(animate);
@@ -278,7 +278,7 @@ function Tool_motion_x() {
 	var t1 = document.getElementById("th1").value;
 	//Cylinder2.rotation.y += t1*(Math.PI / 180);
   //Box15.position.y += t1*0.5; //for horizantal motion
-  Box16.position.x += t1*0.5;
+  Box15.position.x += -t1*0.5;
 	animate2 = setTimeout(Tool_motion_x, 50);
 	//requestAnimationFrame(animate);
 
@@ -291,7 +291,7 @@ function Tool_motion_z() {
 	var t1 = document.getElementById("th1").value;
 	//Cylinder2.rotation.y += t1*(Math.PI / 180);
   //Box15.position.y += t1*0.5; //for horizantal motion
-  Box16.position.z += t1*0.5;
+  Box15.position.z += t1*0.5;
 	animate2 = setTimeout(Tool_motion_z, 50);
 	//requestAnimationFrame(animate);
 
