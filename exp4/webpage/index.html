@@ -28,6 +28,7 @@
       <input type="button" value="STOP" onclick="stop();">
       <input type="button" value="Tool Y Position Set" onclick="Tool_motion_y();">
       <input type="button" value="Tool X Position Set" onclick="Tool_motion_x();">
+      <input type="button" value="Tool Z Position Set" onclick="Tool_motion_z();">
     </div>
                 <div id="canvas3d-wrapper">
                     <div id="canvas3d-title">Simulator</div>
@@ -180,9 +181,46 @@ var CNC = {
 
 //body frame
       Box10 = new THREE.Mesh(new THREE.BoxGeometry(1000, 15, 600), new THREE.MeshNormalMaterial());
-        //Box9.rotation.y = Math.PI/3;
         Box10.position.set(300, -300, -100);
         this.scene.add(Box10);
+
+      Box11 = new THREE.Mesh(new THREE.BoxGeometry(800, 15, 600), new THREE.MeshNormalMaterial());
+        Box11.rotation.z = Math.PI/2;
+        Box11.position.set(-500, 392.5, 0);
+        Box10.add(Box11);
+
+      Box12 = new THREE.Mesh(new THREE.BoxGeometry(1000, 15, 600), new THREE.MeshNormalMaterial());
+        Box12.rotation.z = Math.PI/2;
+        Box12.position.set(400, -492.5, 0);
+        Box11.add(Box12);
+
+      Box13 = new THREE.Mesh(new THREE.BoxGeometry(800, 15, 600), new THREE.MeshNormalMaterial());
+        Box13.rotation.z = Math.PI/2;
+        Box13.position.set(-500, 392.5, 0);
+        Box12.add(Box13);
+
+      //Box14 = new THREE.Mesh(new THREE.BoxGeometry(800, 15, 1000), new THREE.MeshNormalMaterial());
+        //Box14.rotation.x = Math.PI/2;
+        //Box14.position.set(0, -500, -292.5);
+        //Box13.add(Box14);
+
+//Box14-turrent
+      Box15 = new THREE.Mesh(new THREE.BoxGeometry(150, 250, 250), new THREE.MeshNormalMaterial());
+        //Box13.rotation.x = Math.PI/2;
+        Box15.position.set(720, 300, -250);
+        this.scene.add(Box15);
+
+      Sphere1 = new THREE.Mesh(new THREE.SphereGeometry(100, 150, 350), new THREE.MeshNormalMaterial());
+        Sphere1.rotation.z = -Math.PI/2;
+        Sphere1.position.set(-75, 0, 0);
+        Box15.add(Sphere1);
+
+      Box16 = new THREE.Mesh(new THREE.BoxGeometry(30, 80 , 40), new THREE.MeshNormalMaterial());
+        Box16.position.set(0, -120, 0);
+        Sphere1.add(Box16);
+
+
+
 
 
   //Box2 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
@@ -227,7 +265,7 @@ function Tool_motion_y() {
 
 	var t1 = document.getElementById("th1").value;
 	//Cylinder2.rotation.y += t1*(Math.PI / 180);
-  Box15.position.y += t1*0.5; //for horizantal motion
+  Box16.position.y += -t1*0.5; //for horizantal motion
   //Box15.position.x += -t1*0.5;
 	animate2 = setTimeout(Tool_motion_y, 50);
 	//requestAnimationFrame(animate);
@@ -240,8 +278,21 @@ function Tool_motion_x() {
 	var t1 = document.getElementById("th1").value;
 	//Cylinder2.rotation.y += t1*(Math.PI / 180);
   //Box15.position.y += t1*0.5; //for horizantal motion
-  Box15.position.x += -t1*0.5;
+  Box16.position.x += t1*0.5;
 	animate2 = setTimeout(Tool_motion_x, 50);
+	//requestAnimationFrame(animate);
+
+    update();
+    render();
+}
+
+function Tool_motion_z() {
+
+	var t1 = document.getElementById("th1").value;
+	//Cylinder2.rotation.y += t1*(Math.PI / 180);
+  //Box15.position.y += t1*0.5; //for horizantal motion
+  Box16.position.z += t1*0.5;
+	animate2 = setTimeout(Tool_motion_z, 50);
 	//requestAnimationFrame(animate);
 
     update();
