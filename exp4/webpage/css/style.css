@@ -11,9 +11,9 @@
 }
 #canvas3d-wrapper{
     float: left;
-    width: 800px;
+    width: 600px;
 }
-#canvas3d-title, #controller-title, #graph-title{
+#canvas3d-title, #controller-title, {
     height: 25px;
     color: #638EA8;
     background-color: #E4EAED;
@@ -29,19 +29,5 @@
     color: #638EA8;
     height: 500px;
 
-
-}
-#controller-graph-wrapper{
-    padding-left: 405px;
-}
-#controller-wrapper{}
-#graph-wrapper{}
-#controller-view{
-    height: 600px;
-
-
-}
-#graph-view{
-    height: 200px;
 
 }

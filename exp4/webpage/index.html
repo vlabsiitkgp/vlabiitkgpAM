@@ -11,15 +11,7 @@
         <script type="text/javascript" src="./js/stats.min.js"></script>
 
         <script type="text/javascript" src="./js/axis.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQVBSBSZNR"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'G-WQVBSBSZNR');
-        </script>
 
         <style>
 
@@ -29,19 +21,39 @@
         </style>
     </head>
     <body onload="myFunction()">
-        <div id="wrapperfull" style="background: blanchedalmond; border: 2px"  >
-
-        <div>  <input type="text" name="size1" size="2" value="0" id="th1">
-      <input type="button" value="START" onclick="startCount();">
-      <input type="button" value="STOP" onclick="stop();">
-      <input type="button" value="Tool Y Position Set" onclick="Tool_motion_y();">
-      <input type="button" value="Tool X Position Set" onclick="Tool_motion_x();">
-      <input type="button" value="Tool Z Position Set" onclick="Tool_motion_z();">
-    </div>
-                <div id="canvas3d-wrapper">
-                    <div id="canvas3d-title">Simulator</div>
-                    <div id="canvas3d-view"></div>
-                </div>
+	<div style="float: right ; margin-right : 22%">
+            <div id="wrapperfull" style="border: 2px"  >
+            <div>
+           <input type="text" name="size1" size="2" value="0" id="th1">
+          <input type="button" value="RPM START" onclick="startCount();">
+          <input type="button" value="RPM STOP" onclick="stop();">
+           </div>
+		   <br/>
+        <div>
+          <input type="text" name="size2" size="2" value="0" id="th1">
+          <input type="button" value="Tool Y Position Set" onclick="Tool_motion_y();">
+          <input type="button" value="STOP" onclick="stop();">
+        </div>
+		<br/>
+        <div>
+          <input type="button" value="Tool X Position Set" onclick="Tool_motion_x();">
+          <input type="text" name="size3" size="2" value="0" id="th1">
+          <input type="button" value="START" onclick="startCount();">
+          <input type="button" value="STOP" onclick="stop();">
+        </div>
+		<br/>
+        <div>
+          <input type="button" value="Tool Z Position Set" onclick="Tool_motion_z();">
+          <input type="text" name="size4" size="2" value="0" id="th1">
+          <input type="button" value="START" onclick="startCount();">
+          <input type="button" value="STOP" onclick="stop();">
+          </div>
+		  </div>
+</div>
+        <div id="canvas3d-wrapper">
+            <div id="canvas3d-title">Simulator</div>
+            <div id="canvas3d-view"></div>
+      </div>
 
             </div>
 
@@ -101,14 +113,14 @@ var CNC = {
         this.controls.zoomSpeed = 1.2;
         this.controls.panSpeed = 0.8;
 
-        this.controls.noZoom = false;
-        this.controls.noPan = false;
+        this.controls.noZoom = true;
+        this.controls.noPan = true;
 
         this.controls.staticMoving = true;
         this.controls.dynamicDampingFactor = 0.3;
 
         this.controls.keys = [65, 83, 68];
-        this.controls.enabled = false;
+        this.controls.enabled = true;
         // this.controls.addEventListener('change', render);
 
 // Stats preparing
@@ -227,8 +239,10 @@ var CNC = {
         Box16.position.set(0, -120, 0);
         Sphere1.add(Box16);
 
-
-
+//box17-backside of chuck
+      Box17 = new THREE.Mesh(new THREE.BoxGeometry(300, 80 , 40), new THREE.MeshNormalMaterial());
+        Box17.position.set(0, 200, 0);
+        Sphere1.add(Box17);
 
 
   //Box2 = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 130), new THREE.MeshNormalMaterial());
@@ -326,8 +340,8 @@ function stop() {
 // Update controls and stats
 function update() {
 //    AXISCubeScene.controls.update(AXISCubeScene.clock.getDelta());
-    CNC.controls.update();
-    CNC.stats.update();
+    //CNC.controls.update();
+    //CNC.stats.update();
 }
 
 // Render the scene
