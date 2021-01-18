@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Virtual Lab on Additive Manufacturing</title>
+        <title>Basic Manufacturing</title>
         <script type="text/javascript" async
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -31,7 +31,7 @@
                     <!-- Write the name of your lab and link it to the home
           page of your lab (h1 tag is preferred while writing your
           lab name)-->
-                    <a href="../index.html">Virtual Lab on Electrive Discharge Machining</a>
+                    <a href="../index.html">Virtual Lab on CNC machine</a>
                 </div><!-- Add any additional element you want to add to the lab
         header, For example : Help (Enclosing them with suitable
         div is recommended)-->
@@ -45,7 +45,7 @@
                 <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
 
                 <header class="heading" id="experiment-article-heading">
-                    Electric Discharge Machining
+                    CNC machine
                 </header><!-- Navigation menu is useful to organize the view of multiple sections inside the article-->
 
                 <nav class="default" id="experiment-article-navigation">
@@ -60,59 +60,20 @@
 
                 <div id="experiment-article-sections">
                     <!------------------------------- First section of the article---------------------------------->
-
                     <section id="experiment-article-section-1">
-                        <div class="icon" id="experiment-article-section-1-icon">
-                            <!-- Enclose the icon image of your lab -->
-                            <img src="../images/introduction.jpg"></div>
-                        <!-- The heading for the section can be enclosed in a div tag. -->
+                        <div class="icon" id="experiment-article-section-3-icon">
+                            <!-- Enclose the icon image of your lab. -->
+                            <img src="../images/objective.jpg"></div>
 
-                        <div class="heading" id="experiment-article-section-1-heading">
-                            Introduction
-                        </div><!-- Write the section content inside a paragraph element, You can also include images with &lt;img&gt; tag -->
+                            <div class="heading" id="experiment-article-section-1-heading">
+                              Aim & Objective
+                            </div>
+                            <div class="content" id="experiment-article-section-1-content">
 
-                        <div class="content" id="experiment-article-section-1-content">
-                              <p style="text-align: justify">
-                              Electric Discharge Machining(EDM) is a well-established non-traditional machining process suitable for the manufacturing of engineering components that are very much difficult-to-machine by other conventional machining processes and geometrically complex features. <br>
-                            The working principle of EDM machine is "Melting and Evaporation". </p>
-                            <br>
-                            <p><b>The main characteristics of EDM machine is as follows:</b></p>
-                              <u1>
-                                <li>When the discharge takes place between two points of anode and cathode, the intense heat generated near the zone melts and evaporated the materials in the sparking zone.</li>
-                                <li>For improving the effectiveness the work piece and the tool are submerged in a dielectric fluid. Generally keroscene is used a dielectric medium.</li>
-                                <li>Material removal rate (MRR) depends on the current density and the curent rate.</li>
-                                <li>Tool material: Cu, Brass, Cu-W alloy, Graphite.</li>
-                                <li>Work piece:All conducting metals can be machined. EDM machine is used to machine difficult-to-machine materials and high strenth metals.</li>
-                              </u1>
-
-                              <br>
-                            <p>
-                            <b>Categories of EDM machine:</b>
-                            <br>
-                            As per the applications of EDM, it is classified into five ways. They are explained below.
-                            <br>
-                            <b>1. Die Sinking EDM:</b>
-                            <br>
-                            This is a conventional EDM process where the workpiece and electrode are immersed in a dielctric medium. The dielctric medium acts as a light lubricating agent and acts as a insulator that helps to control the arc discharge.  A servo mechanism is used to maintain the distance between workpiece and electrode. In this EDM, soft metallic electrodes can be used to cut hard metals like carbides, stainless steels, titanium alloys etc.
-                            <br>
-                            <b>2. Electric Discharge Milling:</b>
-                            <br>
-                            This process is nothing but the development of CNC countering EDM. Similar to the CNC milling cutter, a rotating cylindrical electrode is used to remove material in a pre-programmed way. The control system is used to decide the feed rate of the electrode and to know the explosion status between the cathode and the anode.
-                            <br>
-                            <b>3. Electric Discharge Grinding:</b>
-                            <br>
-                            The technique used in the electric discharge grinding is similar to EDM machine. Here revoloving wheel is the electrode which is electrically conductive material. Here grinding wheel acts as cathode and workpiece as anode. Rotating motion of wheel controls the inter electrode gap which eliminate the flushing gap with dielectric. The material removal mechanism is same as conventional EDM machine. Electric discharge grinding is economical compared to the conventional diamond grinding.
-                            <br>
-                            <b>4. Wire-cut EDM:</b>
-                            <br>
-                            The wire EDM is used to produce very complex shapes with the very thin wire. Any hard material can be easily machined irespective of their thickness. The diameter of 2μm to 3μm wire is used as electrode. The mechanism is same as EDM machine but handling wire feeding mechanism is too dificult. The debries are washed out by using flushing. The dies and punches above 300mm thickness are difficult to manufacture.
-                            <br>
-                            <b>5. Powder mixed EDM (PMEDM):</b><br>
-                            PMEDM is the latest technology used for improving the surface quality of the machined components. Machining procedure of PMEDM is same as Die Sinking EDM machine only difference is conductive metal powders added to the dielectric medium in PMEDM. This process overcomes EDM machine drawbacks and improves the efficiency of the machining process.
-                            </p>
-
+                          </p>
                         </div>
                     </section>
+
                     <!-------------------------- Second section of the article---------------------------------------->
 
                     <section id="experiment-article-section-2">
@@ -123,305 +84,126 @@
                         <div class="heading" id="experiment-article-section-2-heading">
                             Theory
                         </div>
-
                         <div class="content" id="experiment-article-section-2-content">
                             <p style="text-align: justify; font-weight: bold">
-                              <p>This section describes the process of material removal and identifies the variables that affect the material removal rate and dimensional accuracy.
-                              EDM is an electro-thermal non-traditional machining process, where electrical energy is used to generate electrical spark and material removal mainly occurs due to thermal energy of the spark.</p>
-                              <center><img src="../images/EDM.png">
-                              <blockquote><i><p>Fig 2.1 Schematic of the EDM process </p></i></blockquote>
-                            </center>
-                                The schematic of the process is shown in Fig. 2.1. In EDM, a potential difference is applied
-                                between the tool and workpiece by a suitable pulse power generator. Generally, positive terminal
-                                of the power supply unit is connected to the work material and negative terminal to the tool. Both
-                                the tool and the work materials should be electricity conductive. To improve the effectiveness of
-                                the process, both tool and the work material are immersed in a dielectric medium (hydrocarbon
-                                or mineral oil). A servomotor is used to maintain a predefined gap between the tool and the work
-                                material, known as the spark gap (10-125 μm). Depending upon the applied potential difference
-                                and the gap between the tool and workpiece, an electric field would be established and ionization
-                                of the dielectric creates plasma channel between the tool and the workpiece, and discharge takes
-                                place through the channel in the form of spark. The localized intense heat from the spark melts
-                                and evaporates the material forming a vapour bubble. As the potential difference goes to zero at
-                                the end of the voltage pulse, the plasma channel and the bubble collapse, and a shock wave is
-                                generated by cavitation effect which ejects the molten material.
-                                <br>
-                                Dependence of MRR with process parameters:<br>
-                                Material removal rate (MRR) can be expressed by the following equation:<br>
-                                <Center>MRR = k. V. I. t on . f ...........(eq. 1)<br>
-                                   = (k. V. I. t <sub>on</sub> )/ (t <sub>on</sub> + t <sub>off</sub> ) ..............(eq. 2)<br>
-                                = k. V. I. dc .............(eq. 3)<br></center>
-                                Where,<br>
-                                k – Proportionality constant which depends on the tool and work material combination<br>
-                                V – Voltage<br>
-                                I - Current<br>
-                                f – Frequency of sparking = 1/(t <sub>on</sub> + t <sub>off</sub> )<br>
-                                t<sub> on</sub> – Pulse on time<br>
-                                t <sub>off</sub> – Pulse off time<br>
-                                dc – Duty cycle = t <sub>on</sub> /(t <sub>on</sub> + t <sub>off</sub> )<br>
-                                The above relation expresses the dependence of MRR on various experimental parameters.<br>
-                                Specific energy requirement is defined as the ratio of stock removal to energy input.<br>
-                                Power supply:<br>
-                                In EDM, the generator is used to apply voltage pulses between the tool and the workpiece. A
-                                constant voltage is not applied. Only sparking is desired in EDM rather than arcing. Arcing leads
-                                to localised material removal at a particular point whereas sparks get distributed all over the tool
-                                surface leading to uniformly distributed material removal under the tool.<br>
-                                Different power generators are used in EDM and some are listed below:<br>
-                                • Resistance-capacitance type (RC type) Relaxation generator<br>
-                                • Rotary impulse type generator<br>
-                                • Electronic pulse generator<br>
-                                • Hybrid EDM generator<br>
-                                Electronic pulse generator is used for the EDM machine used in this experiment.<br>
-                                <p><b>Process Variables</b></p>
-                                <p>EDM process depend upon some input parameters which influnce the machining rate. The parametrs are described below:</p>
-                                <u1>
-                                  <li><b>Discharge Current or Peak Current:</b></li>
-                                <p>The maximum amount of current available for each pulse. It starts at zero and rises until it reaches a peak value which is called discharge current.</p>
-                                  <li>Discharge Voltage:</li>
-                                <p>When the current flows through the plasma channel, the open circuit Voltage goes down and the electrode gap comes to steady stay position. It is the most important factor which controlls the spark energy.</p>
-                                  <li><b>Pulse-on Time:</b></li>
-                                <p>The ionization and sparking time is known as pulse on time or pulse duration.It is measured in tems of microseconds(μs). The amount of energy applied at this time is directly poropational to the material removal rate(MRR). Due to this, high material removal rate and good surface roghness is obained even at high spark energy.</p>
-                                  <li><b>Pulse-off Time:</b></li>
-                                <p>The duration of time between two consecutive pulse duration is called pulse off time or pulse interval. It is calculated when supply voltage is off. In this time period, deionized dielectric regains its strength for next cycle. In the mean time, the molten metal can get solidified and debris will be washed out from the machining zone through flushing.</p>
-                                <li><b>Duty Cycle:</b></li>
-                                <p>Duty cycle is the percentage of pulse on time with relative to the total cycle time. Generally higher duty cycle means high cutting efficiency.</p>
-                                <p>Duty cycle (%) =(Pulse-on time/Total cycle time)X100</p>
-                                <p>Total cycle time (μs) = Pulse-on time + Pulse-off time</p>
-                                <p><b>Material Removal Rate (MRR):</b></p>
-                                <p>The MRR can be defined as the amount of material removal from the workpiece per unit time. It is measured in terms of mm<sup>3</sup>/min. </p>
-                                <p><b>Electrode Wear Rate or Tool Wear Rate (EWR):</b></p>
-                                <p>The EWR can be defined as the amount of material removed from the electrode per unit time. It is measured in terms of mm<sup>3</sup>/min.</p>
-                                </div>
-
+                            <p>
+                            </p>
+                        </div>
                     </section>
+
                     <!-------------------------- Third section of the article---------------------------------------->
 
                     <section id="experiment-article-section-3">
                         <div class="icon" id="experiment-article-section-3-icon">
-                            <!-- Enclose the icon image of your lab. -->
-                            <img src="../images/objective.jpg"></div>
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/procedure.jpg"></div>
 
                         <div class="heading" id="experiment-article-section-3-heading">
-                            Objective
+                            Procedure
                         </div>
 
                         <div class="content" id="experiment-article-section-3-content">
-                            <ol>
-                              <li>To study the characteristic features of EDM process</li>
-                              <li>To study the effect of various experimental parameters such as electrical discharge
-                                current, discharge on-time, duty cycle and electrode polarity on the material removal rate
-                                (MRR) and tool wear rate (EWR) in machining of stainless steel workpiece using copper
-                                tool.</li>
-                            </ol>
+                            <p>
+
                         </div>
                     </section>
+
                     <!-------------------------- Fourth section of the article---------------------------------------->
 
                     <section id="experiment-article-section-4">
                         <div class="icon" id="experiment-article-section-4-icon">
                             <!-- Enclose the icon image of your lab.-->
-                            <img src="../images/procedure.jpg"></div>
-
-                        <div class="heading" id="experiment-article-section-4-heading">
-                            Procedure
-                        </div>
-
-                        <div class="content" id="experiment-article-section-4-content">
-                            <ol>
-                              <li>Weight of the workpiece and the tool before the experiment is to be taken.</li>
-                                <li> The tool is to be mounted in the quill and the workpiece is to be clamped in the
-                                production vice mounted in the machine.</li>
-                                <li> The power supply of the pulse generator and the control unit is to be switched on.</li>
-                                <li> Pump is to be switched on to fill the chamber with electrolyte upto the operating level.</li>
-                                <li> Flushing nozzle is to be placed near the workpiece.</li>
-                                <li> Desired pulse-on-time and pulse-off-time is to be set.</li>
-                                <li> Proper gap setting and desired polarity is to be set.</li>
-                                <li> Appropriate current (1-16 Amp) is to be set.</li>
-                                <li> The feed switch is to be set in ‘AUTO’ position and the ‘Spark On’ switch is to be put on
-                                to switch on the generator.</li>
-                                <li> Stopwatch is to be started as soon as the spark occurs.</li>
-                                <li> Machining is to be done for predefined depth/predefined time.</li>
-                                <li> Machine and stopwatch is to be stopped as soon as the intended machining is over.</li>
-                                <li> The electrolyte is to be drained out and the quill is to be lifted.</li>
-                                <li> The workpiece and the tool is to be taken out and cleaned.</li>
-                                <li> The weight of the workpiece and the tool is to be taken and the MRR and EWR is to be
-                                calculated.</li>
-                                <li> Step (1-15) is to be repeated with new workpiece and tool for different I, t <sub>on</sub> , duty cycle
-                                and polarity.</li>
-                                </ol>
-                        </div>
-                    </section>
-
-
-                    <!-------------------------- Fifth section of the article---------------------------------------->
-
-                    <section id="experiment-article-section-5">
-                        <div class="icon" id="experiment-article-section-5-icon">
-                            <!-- Enclose the icon image of your lab.-->
                             <img src="../images/simulation.jpg"></div>
 
-                        <div class="heading" id="experiment-article-section-5-heading">
+                        <div class="heading" id="experiment-article-section-4-heading">
                             Simulator
                         </div>
-                        <div class="content" id="experiment-article-section-5-content">
+                        <div class="content" id="experiment-article-section-4-content">
                             <p style="text-align: justify; padding-bottom: 20px"> </p>
-                              <a href="./webpage/index.html">
+                              <a href="./webpage/index.html" target="_blank">
                                 Simulator for the Experiment</a></p>
                         </div>
                     </section>
+                    <!-------------------------- Fivith section of the article---------------------------------------->
+                    <section id="experiment-article-section-5">
+                        <div class="icon" id="experiment-article-section-5-icon">
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/discussion.png"></div>
 
-                <!-------------------------- Sixth section of the article---------------------------------------->
+                        <div class="heading" id="experiment-article-section-5-heading">
+                          Discussion
+                        </div>
+
+                        <div class="content" id="experiment-article-section-5-content">
+                      <p style="text-align: justify; padding-bottom: 20px">
+                        <p></p></div>
+                  </section>
+                  <!-------------------------- Sixth section of the article---------------------------------------->
+
+                  <section id="experiment-article-section-6">
+                      <div class="icon" id="experiment-article-section-6-icon">
+                          <!-- Enclose the icon image of your lab.-->
+                          <img src="../images/report.png"></div>
+
+                      <div class="heading" id="experiment-article-section-6-heading">
+                        Report
+                      </div>
+
+                      <div class="content" id="experiment-article-section-6-content">
+
+                          <p style="text-align: justify; padding-bottom: 20px">
 
 
-                </--------------------------------------------------------------------------------------------------->
-                <section id="experiment-article-section-6">
-                    <div class="icon" id="experiment-article-section-6-icon">
-                        <!-- Enclose the icon image of your lab.-->
-                        <img src="../images/discussion.png"></div>
-
-                    <div class="heading" id="experiment-article-section-6-heading">
-                      Discussion
-                    </div>
-
-                    <div class="content" id="experiment-article-section-6-content">
-
-                        <p style="text-align: justify; padding-bottom: 20px">
-                        <b>Effect of V, I, t <sub>on</sub> and dc on MRR:</b><br>
-                        From eq. 1 and eq. 3, it is observed that MRR will increase with the increase of V, I, t <sub>on</sub> and dc.
-                        But, in actual machining process above certain threshold values of those parameters, MRR
-                        deviates from the above equations, it tends to saturate or decrease.<br>
-                        <b>Reason:</b><br>
-                        At higher values of t <sub>on</sub> and/or I, probability of arcing is higher due to the deposition of
-                        decomposed carbon on anode from dielectric and not proper removal of the debris from the gap
-                        between the tool and the workpiece. Further, electrical spark is essentially unstable; it tends to
-                        convert into an arc with increased t <sub>on</sub> . This is mainly because spark is a relatively high sustaining
-                        voltage and low current discharge, while arc is relatively low sustaining voltage and high current
-                        discharge (Fig. 2.3 below), therefore spark has always a tendency to convert into arc as this
-                        requires lower sustaining voltage. If an arc is allowed for too long both tool and workpiece get
-                        damaged. Therefore, in commercial EDM machine, whenever arc forms short circuit occurs.
-                        This is detected by the power supply controller and through the servo mechanism the tool is
-                        pulled out to prevent damages and after the end of arc when the high gap resistance sets in the
-                        tool is brought to the workpiece maintaining the specified gap. Though during that period no
-                        material removal occurs it is included in the machining time, hence MRR decreases.<br>
-                        Less value of t off hinders effective removal of the debris including carbon particle generated in
-                        dielectric break down. Depending upon the polarity and current value, this accumulated debris
-                        may cause deposition of carbon onto the workpiece. This hampers the generation of sparks even
-                        though the potential is applied. This is called misfire and it too reduces MRR.<br>
-                        <b>Effect of Polarity on MRR:</b><br>
-                        In wire-EDM, the workpiece is made positive and the tool negative. This configuration is called
-                        <b>straight polarity</b>. In this configuration electrons bombard the workpiece and +ve ions bombard
-                        the tool. Due to the large size of ions they undergo more frequent collisions with vaporized
-                        atoms and molecules in the spark; thereby they lose their kinetic energy and strike the tool with a
-                        relatively less kinetic energy. While electrons being very tiny compared to ions acquire high
-                        kinetic energy in the spark and strike the workpiece, and heat up a very small volume of the
-                        material which gets melted and vaporized. Therefore, it has been experimentally found that if
-                        both electrodes are made of the same material, greater erosion occurs on the positive electrode.
-                        Hence, to obtain maximum MRR with minimum wear on the tool; the work material is
-                        connected to the positive and the tool to the negative terminal.<br>
-                        This holds valid for shorter voltage pulse on-time, t <sub>on</sub> , shorter than ~ 25 microseconds. The
-                        typical t <sub>on</sub> in wire-EDM is in this range and therefore the wire-EDM is performed with workpiece
-                        held at positive potential and wire at negative potential.<br>
-                        When the t <sub>on</sub> is longer in the range of 50 – 500 μs, typical of die-sink EDM, the scenario at both
-                        anode and cathode change. As the electrons travel towards the anode they create more and more
-                        ionization producing more electrons and +ve ions, thus electron density increases with time. Due
-                        to repulsive force among electrons they tend to spread out as they travel towards anode forming a
-                        shower type of electron channel. This has been illustrated schematically in Fig. 2.2. below. Due to
-                        the spread of electrons, they strike at a relatively larger area of the anode surface due to which
-                        the kinetic energy density transferred by electrons is relatively less compared to the case of
-                        shorter pulse t <sub>on</sub> . So, the temperature rise is less and MRR is less.<br>
-                        On the other hand, the number density of +ve ions also increases with time due to ionization by
-                        electrons and they move towards the cathode. They undergo collisions losing their energy and
-                        tend to spread due to repulsive force, but much less as compared to electrons, owing to their
-                        larger mass. Further, as they reach near cathode, due to their larger mass and slower mobility
-                        compared to electrons, their number density near cathode increases compared to electrons; since
-                        electrons emerging out of the cathode surface move away very fast. Thus, a +ve charge cloud is
-                        formed near the cathode and a strong electric field sets in between the +ve charge cloud and
-                        cathode for t <sub>on</sub> > 25μs. The gap between the +ve charge cloud and the cathode is very small, a
-                        few microns, and therefore +ve ions from the charge cloud strike the cathode surface with very
-                        high kinetic energy acquired in the strong electric field of the +ve charge space. Because of this a
-                        small volume at the cathode surface is heated, melted and vaporized, effecting material removal.
-                        This is the main reason for higher MRR with positive polarity tool and negative polarity
-                        workpiece. Hence, for die-sink EDM in which machining is done with t <sub>on</sub> typically much longer
-                        than 25 μs another term ‘normal polarity’ for the configuration is defined that gives higher MRR.<br>
-                        <center><img src="../images/2.2.png"></center>
-                        <center>Fig. 2.2. (a) Schematic representation of electron and +ve ion distribution in the gap between the
-                        anode and cathode for long t <sub>on</sub> (50 – 500 μs), (b) variation of MRR with t <sub>on</sub> for normal and reverse
-                        polarity.</center><br>
-                        In this experiment, for Cu tool and steel work material, normal polarity is the configuration
-                        where steel work material is connected to the negative terminal and Cu tool to the positive
-                        terminal. This configuration gives higher MRR and is opposite to the ‘straight polarity’ as
-                        mentioned before. Normal polarity improves metal removal rate and reverse polarity improves
-                        surface finish.<br>
-                        <b>Misfire and arcing:</b><br>
-                        When potential is applied, dielectric breakdown occurs and spark is generated. But for few input
-                        pulses, no dielectric breakdown occurs, and hence no spark is generated. Deposition of carbon
-                        onto the workpiece /tool also hinders spark generation. This phenomenon is called misfire. This
-                        reduces MRR as time is elapsed without any material removal. Sometimes, dielectric breakdown
-                        is maintained even in the pulse-off time when the applied potential difference becomes zero.
-                        Hence, current flows in the t off time also. This is called arcing. This causes instability in the
-                        material removal process. Fig. 3 shows the gap voltage & gap current for normal pulse, misfire
-                        and arcing.<br>
-                        <center><img src="../images/2.3.png"></center>
-                        <center>Fig. 3. Graph showing the input voltage waveform from electronic pulse generator circuit and
-                        gap voltage & gap current for normal pulse, misfire and arcing.</center><br>
-                      </p>
-                    </div>
-                </section>
-                </------------------------------------------------------------------------------------------------->
-                <section id="experiment-article-section-7">
-                    <div class="icon" id="experiment-article-section-7-icon">
-                        <!-- Enclose the icon image of your lab.-->
-                        <img src="../images/report.png"></div>
-
-                    <div class="heading" id="experiment-article-section-7-heading">
-                      Report
-                    </div>
-
-                    <div class="content" id="experiment-article-section-7-content">
-
-                        <p style="text-align: justify; padding-bottom: 20px">
-                          <ol>
-                            <li>Report should contain graphs showing the dependence of MRR and EWR on discharge
-                              current, pulse-on-time, duty cycle and electrode polarity. Explain the results.</li>
-                              <li>Estimate the average specific energy.</li>
-                            </ol> </p>
-                    </div>
-                    </section>
-                </--------------------------------------------------------------------------------------------------->
-
+                          </p>
+                        </div>
+                        </section>
 
                     <!-------------------------- Seventh section of the article---------------------------------------->
 
-                    <section id="experiment-article-section-9">
-                        <div class="icon" id="experiment-article-section-9-icon">
+                    <section id="experiment-article-section-7">
+                        <div class="icon" id="experiment-article-section-7-icon">
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/quizzes.jpg"></div>
+
+                        <div class="heading" id="experiment-article-section-7-heading">
+                                Questions
+                        </div>
+
+                        <p><div class="content" id="experiment-article-section-7-content">
+
+
+                            </p>
+                        </div>
+                    </section>
+
+<!-------------------------- Eight section of the article---------------------------------------->
+
+                    <section id="experiment-article-section-8">
+                        <div class="icon" id="experiment-article-section-8-icon">
                             <!-- Enclose the icon image of your lab.-->
                             <img src="../images/reference.jpg"></div>
 
-                        <div class="heading" id="experiment-article-section-9-heading">
+                        <div class="heading" id="experiment-article-section-8-heading">
                             Reference
                         </div>
 
-                        <div class="content" id="experiment-article-section-9-content">
+                        <div class="content" id="experiment-article-section-8-content">
                             <strong>Books </strong>
                             <ol>
-                              <li>Advanced Machining Processes, by Vijay K. Jain</li>
-                              <li>Nonconventional machining process by P.K. Mishra</li>
+                              <li> </li>
 
                             </ol>
                             <strong>Papers</strong>
                             <ol>
-                              <li>Chakraborty, S.S., Mohata, G., Ghosh, S. and Nath, A.K., 2015. A study on the physical
-                                mechanisms in electro-discharge machining process.</li>
-                              <li>DiBitonto, Daryl D., Philip T. Eubank, Mukund R. Patel, and Maria A. Barrufet.
-                                &quot;Theoretical models of the electrical discharge machining process. I. A simple cathode
-                                erosion model.&quot; Journal of applied physics 66, no. 9 (1989): 4095-4103.</li>
-                              <li>T. Sree Lakshmi, Sagnik Sarma Choudhury, K. Gnana Sundari, and B. Surekha, “Investigation on the effect of different
-                                dielectric fluids during powder mixed EDM of alloy steel”, Springer Nature, Chapter:103(2020).</li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
                             </ol>
 
-                            <strong>NPTEL</strong>
+                            <strong>Web</strong>
                             <ol>
-                              <li>Module 9 Non conventional Machining, Lesson 39, Electro Discharge
-                                machining, IIT Kharagpur</li>
+                              <li></li>
+
                             </ol>
                           </div>
                     </section>
