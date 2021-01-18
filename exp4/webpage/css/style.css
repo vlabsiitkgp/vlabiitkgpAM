@@ -2,32 +2,43 @@
 #main-wrapper{
     border-radius: 5px;
     background-color: lightgrey;
-    width: 870px;
+    width: 1070px;
     height: 530px;
     padding: 5px;
-    border: 2px solid navy;
+    border: 3px solid black;
     margin: 10px;
-
+	float: center-left;
 }
 #canvas3d-wrapper{
+	display: inline-block;
+    margin:0 auto;
     float: left;
-    width: 600px;
+    width: 710px;
 }
-#canvas3d-title, #controller-title, {
+#canvas3d-title, #controller-title, #graph-title, #input-title{
     height: 25px;
     color: #638EA8;
-    background-color: #E4EAED;
+    background-color: #E4EAED;    
     border-top: 1px #85A8C2 solid;
     border-right: 1px #85A8C2 solid;
     border-bottom: 1px #85A8C2 solid;
-    border-left: 1px #85A8C2 solid;
+    border-left: 1px #85A8C2 solid;    
     font-size: 16px;
     font-weight: bold;
-    padding-left: 5px;
+    padding-left: 15px;
+}
+#controller-wrapper{
+    float: right;
+	border-radius: 5px;
+    padding-right: 1px;
+    width: 350px;
+	height: 520px;
+	border-top: 2px #85A8C2 solid;
+    border-right: 2px #85A8C2 solid;
+    border-bottom: 2px #85A8C2 solid;
+    border-left: 2px #85A8C2 solid;
 }
 #canvas3d-view{
     color: #638EA8;
     height: 500px;
-
-
 }
