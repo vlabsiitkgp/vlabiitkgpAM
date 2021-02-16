@@ -293,6 +293,6 @@ let videos = [
     {
         "index":16,
         "title":"Conclusion",
-        "text":"Congratulations! You have completed the lathe tutorial course!<br>Whether or not you volunteered, we would appreciate if you could provide your feedback on <a href='https://docs.google.com/forms/d/e/1FAIpQLSd7YOejuvFjP7pxIvA_i-j8kWUNpIDM1tpud0qlDMSnQFILrw/viewform?usp=sf_link'>THIS SURVEY</a> (click link, it is only one question)."
+        "text":"Congratulations! You have completed the lathe tutorial course!."<br>
     }
 ];
