@@ -40,7 +40,7 @@
           <input type="button" value="START" onclick="Tool_motion_y();">
           <input type="button" value="STOP" onclick="stop();">
         </div>
-	      
+
 		<br/>
         <div>
           <input type="button" value="Tool Z Position Set" ">
@@ -48,6 +48,15 @@
           <input type="button" value="START" onclick="Tool_motion_z();">
           <input type="button" value="STOP" onclick="stop();">
           </div>
+
+    <br/>
+        <div>
+          <input type="button" value="Home Position" ">
+          <input type="text" name="size4" size="2" value="0" id="th4">
+          <input type="button" value="START" onclick="Tool_motion_z();">
+          <input type="button" value="STOP" onclick="stop();">
+          </div>
+
 		  </div>
 </div>
         <div id="canvas3d-wrapper">
@@ -129,7 +138,7 @@ var CNC = {
         axes = buildAxes(200);
         //axes.position = mesh.position;
         CNC.scene.add(axes);
-		
+
 		axes2 = buildAxes(200);
         axes2.position.set(-1000, -1000, 0);
         CNC.scene.add(axes2);
@@ -142,7 +151,7 @@ Cylinder0 = new THREE.Mesh(new THREE.CylinderGeometry(210, 190, 150, 100), new T
         Cylinder0.position.set(-120, 0, 0);
 		    Cylinder0.rotation.z = Math.PI/2;
         CNC.scene.add(Cylinder0);
-		
+
       Cylinder1 = new THREE.Mesh(new THREE.CylinderGeometry(190, 190, 90, 100), new THREE.MeshNormalMaterial());
         Cylinder1.position.set(0, 0, 0);
 		    Cylinder1.rotation.z = Math.PI/2;
@@ -209,23 +218,23 @@ Cylinder0 = new THREE.Mesh(new THREE.CylinderGeometry(210, 190, 150, 100), new T
         CNC.scene.add(Box10);
 
 		Box10_1 = new THREE.Mesh(new THREE.BoxGeometry(1000, 125, 700), new THREE.MeshNormalMaterial());
-        
+
 		Box10_1.rotation.x = -Math.PI/1.8;
 		//Box10_1.rotation.x = Math.PI/15;
 		Box10_1.position.set(300, 100, -400);
         CNC.scene.add(Box10_1);
-		
+
 		Box10_2 = new THREE.Mesh(new THREE.BoxGeometry(700, 650, 800), new THREE.MeshNormalMaterial());
         Box10_2.position.set(-510, 108, -130);
 		Box10_2.rotation.x = -Math.PI/1.765;
 		//Box10_1.rotation.x = Math.PI/15;
-		
+
         CNC.scene.add(Box10_2);
-		
+
 		Box10_3 = new THREE.Mesh(new THREE.BoxGeometry(1660, 180, 800), new THREE.MeshNormalMaterial({color: 0x7777ff}));
         Box10_3.position.set(-30, -300, -15);
 		CNC.scene.add(Box10_3);
-		
+
       Box11 = new THREE.Mesh(new THREE.BoxGeometry(800, 15, 600), new THREE.MeshNormalMaterial());
         Box11.rotation.z = Math.PI/2;
 		Box11.rotation.x = -Math.PI/15;
@@ -242,7 +251,7 @@ Cylinder0 = new THREE.Mesh(new THREE.CylinderGeometry(210, 190, 150, 100), new T
         Box13.position.set(-500, 392.5, 0);
         Box12.add(Box13);
 
-		
+
       //Box14 = new THREE.Mesh(new THREE.BoxGeometry(800, 15, 1000), new THREE.MeshNormalMaterial());
         //Box14.rotation.x = Math.PI/2;
         //Box14.position.set(0, -500, -292.5);
