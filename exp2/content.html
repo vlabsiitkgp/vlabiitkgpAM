@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Basic Manufacturing</title>
+        <title> Manufacturing processes</title>
         <script type="text/javascript" async
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -31,7 +31,7 @@
                     <!-- Write the name of your lab and link it to the home
           page of your lab (h1 tag is preferred while writing your
           lab name)-->
-                    <a href="../index.html">Virtual Lab on Additive Manufacturing</a>
+                    <a href="../index.html">Virtual Lab on Manufacturing processes</a>
                 </div><!-- Add any additional element you want to add to the lab
         header, For example : Help (Enclosing them with suitable
         div is recommended)-->
@@ -75,13 +75,40 @@
 
                         <div class="content" id="experiment-article-section-1-content">
                             <p style="text-align: justify">
-                              Computer Numerical Control(CNC) is a self-contained numerical control(NC) system for a single machine tool including a dedicated minicomputer controlled by stored instructions to perform some or all of the basic NC functions. It is the automated control of machining tools such as drills, lathes and mills. CNC machine is the last step in the metal manufacturing, sometimes it will be the only process involved.<br>
-                              When compared to the other working techniques, CNC is capable of satisfiying close tolerances and gives excellent surface finish.<br>
-                              <br>To understand the history of CNC 
+                              Computer Numerical Control(CNC) is a self-contained numerical control(NC) system for a single machine tool including a dedicated minicomputer controlled by stored instructions to perform some or all of the basic NC functions. It is the automated control of machining tools such as drills, lathes and mills. CNC machine is the last step in metal manufacturing, sometimes it will be the only process involved. When compared to the other working techniques, CNC is capable of satisfying close tolerances and gives an excellent surface finish.
+                              CNC turning is a subtractive machining process that removes unwanted material by using a cutting tool to obtain the desired shape. The tool moves along the rotating workpiece to create a helical path. The term turning itself refers to produce the parts by cutting operations on the external surface. Boring is the opposite operation to the turning for creating hollow parts. The lathe machine is the earliest machine used to produce parts with semi-automatic version but the CNC turning is full automated from first to last. <br>
+                            <br>
+
                               <b>History of CNC</b>:
                               <oi>
-                                <li>The word CNC is derived from the latin </li>
+                                <li>The word CNC came into existence in seventies when microprocessors and microcomputers replaced integrated circuit IC based controls used for NC machines.
+                                  The development of numerical control owes much to the United States air force. </li>
+
+                                  <li>The concept of NC was proposed in the late 1940s by John Parsons who recommended a method of automatic machine control that would guide a milling cutter to produce a curvilinear motion in order to generate smooth profiles on the work-pieces. </li>
+                                  <li>In 1949, the U.S Air Force awarded Parsons a contract to develop new type of machine tool that would be able to speed up production methods. 
+                                  Parsons sub-contracted the Massachusetts Institute of Technology (MIT) to develop a practical implementation of his concept. </li>
+                                <li>  Scientists and engineers at M.I.T built a control system for a two axis milling machine. This prototype was produced by a conventional tracer mill with numerical control servomechanisms for the three axes of the machine. By 1955, these machines were available to industries with some small modifications. </li>
+                                <li>The machine tool builders gradually began developing their own projects to introduce commercial NC units. </li>
+                                <li>  Airframe builders, worked to devise numerical control machines to satisfy their own particular production needs. </li>
+                                <li>  The Air force continued its encouragement of NC development by sponsoring additional research at MIT to design a part programming language that could be used in controlling N.C. machines.
+	                                 NC matured as an automation technology when electronics industry developed new products. </li>
+                                <li>Computer managed numerical control (NC) is a generic term that encompasses.
+                                <ol>
+                                  <li>  Computer numerical control (CNC)</li>
+                                    <li>Direct numerical control (DNC) </li>
+                                    <li>Industrial robots</li>
+                                  </ol>
+                                </li>
                                 </oi>
+                                Steps to setup CNC turning machine are explained below:<br>
+                                <b>Make sure the power is off:</b> Extra care should be taken while operating the CNC machine. Checking the power switch is the basis for that.<br>
+                                <b>Fixing the part in the chuck:</b> The chuck secures the part in the whole machining process. An improper loading can lead to wrong dimensions of the finished part.<br>
+                                <b>Loading the tool:</b> Turning consist of many steps, so be sure to choose while choosing the tools. <br>
+                                <b>Calibration:</b> Both the tool and workpiece has to be installed properly or else final product will not meet the required dimensions.<br>
+                                <br>
+                                <center><img src="../images/CNC.png"> <br>
+                                Fig 2.1 Ace Micromatic CNC Turnig Machine</center><br>
+                                <br>
 
                                   </p>
                         </div>
@@ -99,6 +126,54 @@
                         <div class="content" id="experiment-article-section-2-content">
                             <p style="text-align: justify; font-weight: bold">
                             <p>
+                              The most common opertaion in the manufacturing unit. A single point tools moves along the axis of the part or workpiece to remove unwanted material. CNC turning can produce various shapes like step, tampered etc. A very few passes are required to get the desired result. The high precision can be attainable with the turning operation. The limits and fits are usually choosen on a hole basis system. Reaching the close tolerances is much easier than doing the same when drilling a hole.  <br>
+
+                              <b>Functions of CNC are described below</b>:
+                              <ol>
+                                <li>Machine tool control: The primary function of the CNC system is control of the machine tool.
+                                  This involves conversion of the part program instructions into machine tool motions through the computer interface and servo system.
+                                  The main adavantage of the CNC is the capability to incorporate many control features into the soft-wired controller unit.
+                                  Some of the control functions, such as circular interpolation can be accomplished more efficiently with hard wired circuits than with the computer.</li>
+                                <li>In process compensation: A function closely related to machine tool control is in-process compensation.
+                                  This involves the dynamic correction of the machine tool motions for changes or errors which occur during processing. Some of the options include:<br>
+                                  i. Adjustment for errors sensed by gauges and probes.<br>
+                                  ii. Re-computation of axis positions<br>
+                                  iii. off set adjustments for tool radius and length.<br>
+                                  iv. Adaptive control adjustments to speed or feed.<br>
+                                  v. Computation of predicted tool life and selection of alternative tooling when indicated. </li>
+                                <li>Improved programming and operating features: The features include<br>
+                                  i. Editing of part programs at the machine. This permits correction or optimization of the program.<br>
+                                  ii. Graphic display of the tool path to verify the tape.<br>
+                                  iii. Use of specially written sub-routines<br>
+                                  iv. manual data input<br>
+                                  v. Local storage of more than one part program
+                                </li>
+                              </li>
+                                <li>Diagnostics: NC machines are complex and expensive systems. The complexity increases the risk of component failures which lead to system down time.</li>
+                              </ol>
+                              <br>
+                              Types of CNC Turning<br>
+                                1. CNC chucking center<br>
+                                2. CNC universal turning center<br>
+                                3. 3-Axis center machine<br>
+                                4. 4-Axis center machine<br>
+                                5. 5-Axis center machine<br>
+                                <br>
+
+                              <b>Advantages of CNC:</b>
+                              <oi>
+                                <li>Flexibility of operation is improved, as is the ability to
+                              produce complex shapes with good dimensional accuracy,    repeatability, reduced scrap loss, and high production rates,
+                              Tooling costs are reduced, since templates and other fixtures are not required.</li>
+                               <li>Machine adjustments are easy to make with microcomputers
+                              More operations can be performed with each setup, and less lead time for setup and machining is required compared to conventional methods. Design changes are facilitated, and  inventory is reduced.</li>
+                              <li>Programs can be prepared rapidly and can be recalled at
+                              any time utilizing microprocessors. Less paperwork is involved.</li>
+                              <li> Faster prototype production is possible.</li>
+                              <li> Required operator skill is less than that for a qualified
+                              machinist, and the operator has more time to attend to other tasks in the work area</li><br>
+                              <b>Applications of CNC:</b><br>
+                              The applications of CNC include both for machine tool as well as non-machine tool areas. In the machine tool category, CNC is widely used for lathe, drill press, milling machine, grinding unit, laser, sheet-metal press working machine, tube bending machine etc. Highly automated machine tools such as turning center and machining center which change the cutting tools automatically under CNC control have been developed. In the non-machine tool category, CNC applications include welding machines (arc and resistance), coordinate measuring machine, electronic assembly, tape laying and filament winding machines for composites etc. <br>
 
                             </p>
                         </div>
@@ -117,9 +192,11 @@
                         <div class="content" id="experiment-article-section-3-content">
                             <p style="text-align: justify;">
                               <ol>
-                                <li> To give the basic idea about the CNC Turning.</li>
+                                <li>To study the CNC turning machine.</li>
+                                <li>To perform experiments on the CNC turning machine like step turning and facing</li>
+
                                 <li> Cutting mechanism of the CNC machine. </li>
-                                <li>
+                                <li> To
                                 </ol>
                           </p>
                         </div>
@@ -137,6 +214,13 @@
 
                         <div class="content" id="experiment-article-section-4-content">
                         <p style="text-align: justify;">
+                          1. Click on the link in the simulator tab to perform CNC turning experiment.<br>
+                          2. Use right side control panel to give input data.<br>
+                          3. Enter spindle speed in the given space and click on start button.<br>
+                          4. The spindle starts revolving in the given speed.<br>
+                          5. Enter values to move tool towards the workpiece and then click on start button.<br>
+                          <b>NOTE: Values should be inbetween 0-2 </b><br>
+                          6. After reaching tool towards the workpiece, click on stop button of the respective direction.<br>
                           </p>
                         </div>
                     </section>
@@ -166,19 +250,7 @@
 
                     <!-------------------------- Sixth section of the article---------------------------------------->
 
-                    <section id="experiment-article-section-6">
-                        <div class="icon" id="experiment-article-section-6-icon">
-                            <!-- Enclose the icon image of your lab.-->
-                            <img src="../images/quizzes.jpg"></div>
 
-                        <div class="heading" id="experiment-article-section-6-heading">
-                            Quizzes
-                        </div>
-
-                        <div class="content" id="experiment-article-section-6-content">
-                            <p>Quizzes content.....</p>
-                        </div>
-                    </section>
                     <!-------------------------- Seventh section of the article---------------------------------------->
 
                     <section id="experiment-article-section-7">
@@ -191,23 +263,13 @@
                         </div>
 
                         <div class="content" id="experiment-article-section-7-content">
-                            <strong>Books </strong>
-                            <ol>
-                              <li></li>
-                              <li></li>
-                            </ol>
-                            <strong>Papers</strong>
-                            <ol>
-                              <li></li>
-                              <li></li>
-                            </ol>
 
-                            <strong>NPTEL</strong>
                             <ol>
-                              <li></li>
-                              <li></li>
+                              <li><a href="https://fractory.com/cnc-turning/"> CNC turning</a>   </li>
+                              <li>Peter Smid, CNC programming hand book:Comprehensive Guide to Practical CNC Programming</li>
+                              <li><a href="https://nptel.ac.in/courses/112/105/112105211/">NPTEL </a></li>
                             </ol>
-                          </div>
+                                                    </div>
                     </section>
 
                 </div>
@@ -220,4 +282,4 @@
             </footer>
         </div>
     </body>
-</html>
+                    </html>
