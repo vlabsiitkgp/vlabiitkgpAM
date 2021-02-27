@@ -8,6 +8,7 @@
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQVBSBSZNR"></script>
+<script src="../js/jquery-1.7.1.min.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -250,6 +251,94 @@
 
                     <!-------------------------- Sixth section of the article---------------------------------------->
 
+                    <section id="experiment-article-section-6">
+                        <div class="icon" id="experiment-article-section-6-icon">
+                            <!-- Enclose the icon image of your lab.-->
+                            <img src="../images/quizzes.jpg"></div>
+
+                        <div class="heading" id="experiment-article-section-6-heading">
+                            Quizzes
+                        </div>
+
+                        <div class="content" id="experiment-article-section-6-content">
+
+
+                            <p>1. What does CNC stands for?</p>
+                            <div class="Q1">
+                                <input type="radio" name="q1" value ="A">Computer network control
+                                <input type="radio" name="q1" value ="B">Computer numerical control
+                                <input type="radio" name="q1" value ="C">Computer nested control
+                                <input type="radio" name="q1" value ="D">Computer numerical controller
+
+                            </div>
+                            <p class= "Q1-result hide"></p>
+
+                            <p>2. What type of motor is used to drive a CNC machining centers axis? </p>
+                            <div class="Q2">
+                                <input type="radio" name="q2" value ="A">Servo
+                                <input type="radio" name="q2" value ="B">Sling
+                                <input type="radio" name="q2" value ="C">Derive
+                                <input type="radio" name="q2" value ="D">Pusher
+                            </div>
+                            <p class= "Q2-result hide"></p>
+
+                            <p>3. The depth that the tool is plunged into the surface is called as ______</p>
+                            <div class="Q3">
+                                <input type="radio" name="q3" value ="A"> feed
+                                <input type="radio" name="q3" value ="B">depth of cut
+                                <input type="radio" name="q3" value ="C">depth of tool
+                                <input type="radio" name="q3" value ="D"> working depth
+                            </div>
+                            <p class= "Q3-result hide"></p>
+
+                            <p>4. Feed is measured in units of _____</p>
+                            <div class="Q4">
+                                <input type="radio" name="q4" value ="A">length/revolution
+                                <input type="radio" name="q4" value ="B">degree/revolution
+                                <input type="radio" name="q4" value ="C">length
+                                <input type="radio" name="q4" value ="D">velocity
+                            </div>
+                            <p class= "Q4-result hide"></p>
+
+                            <p>5. CNC machining centres do not include operations like ______</p>
+                            <div class="Q5">
+                                <input type="radio" name="q5" value ="A">milling
+                                <input type="radio" name="q5" value ="B">boring
+                                <input type="radio" name="q5" value ="C">welding
+                                <input type="radio" name="q5" value ="D">tapping
+                            </div>
+                            <p class= "Q5-result hide"></p>
+
+                            <p>6. Which of the following is not the advantage of CNC machines? </p>
+                            <div class="Q6">
+                                <input type="radio" name="q6" value ="A">Higher flexibility
+                                <input type="radio" name="q6" value ="B"> Improved quality
+                                <input type="radio" name="q6" value ="C">Reduced scrap rate
+                                <input type="radio" name="q6" value ="D"> Improved strength of the components
+                            </div>
+                            <p class= "Q6-result hide"></p>
+
+                            <p>7. For CNC machining skilled part programmers are needed. </p>
+                            <div class="Q7">
+                                <input type="radio" name="q7" value ="A">True
+                                <input type="radio" name="q7" value ="B">False
+
+                            </div>
+                            <p class= "Q7-result hide"></p>
+                            <button type="button" class="btn btn-success quizSubmit">Submit</button>
+                        </div>
+
+                        <p>8. When referring to CNC operations, an excessive surface cutting speed will result in: </p>
+                        <div class="Q8">
+                            <input type="radio" name="q8" value ="A">Extended tool life
+                            <input type="radio" name="q8" value ="B"> A longer time to machine the workpiece
+                            <input type="radio" name="q8" value ="C">Rapid tool wear
+                            <input type="radio" name="q8" value ="D"> A decreased use of coolant
+                        </div>
+                        <p class= "Q8-result hide"></p>
+
+                    </section>
+
 
                     <!-------------------------- Seventh section of the article---------------------------------------->
 
@@ -283,3 +372,16 @@
         </div>
     </body>
                     </html>
+
+                    <script>
+                    $(document).on("click", ".quizSubmit", function () {
+                      let ans = ['B','A','B','A','C','D','A','C' ];
+
+                      for(let i=1;i<=ans.length;i++){
+                        if($('input[name="q'+i+'"]:checked').val() == ans[i-1]) $('.Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
+                        else $('.Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
+                      }
+
+
+                    });
+                    </script>
