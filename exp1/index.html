@@ -41,18 +41,6 @@
         <!-- Google Analytics Script -->
         <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQVBSBSZNR"></script>
-<script>
-$(document).on("click", ".quizSubmit", function () {
-  let ans = ['A','D','C','B','B','B','A' ];
-
-  for(let i=1;i<=ans.length;i++){
-    if($('input[name="q'+i+'"]:checked').val() == ans[i-1]) $('.Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
-    else $('.Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
-  }
-
-
-});
-</script>
 
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -150,6 +138,19 @@ $(document).on("click", ".quizSubmit", function () {
             });
 
         </script>
+        <script>
+        $(document).on("click", ".quizSubmit", function () {
+          let ans = ['A','D','C','B','B','B','A' ];
+
+          for(let i=1;i<=ans.length;i++){
+            if($('input[name="q'+i+'"]:checked').val() == ans[i-1]) $('.Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
+            else $('.Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
+          }
+
+
+        });
+        </script>
+        
     </head>
 
     <body>
