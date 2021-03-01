@@ -47,19 +47,6 @@
           gtag('js', new Date());
 
           gtag('config', 'G-WQVBSBSZNR');
-          <script>
-          $(document).on("click", ".quizSubmit", function () {
-            let ans = ['B','B','A','D','C','D','C','A','D','D','A' ];
-
-            for(let i=1;i<=ans.length;i++){
-              if($('input[name="q'+i+'"]:checked').val() == ans[i-1]) $('.Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
-              else $('.Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
-            }
-
-
-          });
-          </script>
-
         </script>
         <script src="../js/modernizr-1.5.min.js" type="text/javascript"></script>
         <script src="../js/jquery-1.7.1.min.js"></script>
