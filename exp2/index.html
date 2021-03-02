@@ -137,6 +137,20 @@
             });
 
         </script>
+
+        <script>
+        $(document).on("click", ".quizSubmit", function () {
+          let ans = ['B','A','B','A','C','D','A','C' ];
+
+          for(let i=1;i<=ans.length;i++){
+            if($('input[name="q'+i+'"]:checked').val() == ans[i-1]) $('.Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
+            else $('.Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
+          }
+
+
+        });
+        </script>
+
     </head>
 
     <body>
