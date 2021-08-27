@@ -150,7 +150,7 @@
 
         });
         </script>
-        
+
     </head>
 
     <body>
@@ -163,3 +163,23 @@
         <!-- ***************************************************** -->
     </body>
 </html>
+
+<script>
+$(document).on("click", "#experiment-article-section-7 .quizSubmit", function () {
+  let ans = ['A','D','C','B','B','B','A' ];
+
+  for(let i=1;i<=ans.length;i++){
+    if($('#experiment-article-section-7 input[name="q'+i+'"]:checked').val() == ans[i-1]) $('#experiment-article-section-7 .Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
+    else $('#experiment-article-section-7 .Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
+  }
+});
+
+$(document).on("click", "#experiment-article-section-2 .quizSubmit", function () {
+  let ans = ['C','B','A','B','C' ];
+
+  for(let i=1;i<=ans.length;i++){
+    if($('#experiment-article-section-2 input[name="q'+i+'"]:checked').val() == ans[i-1]) $('#experiment-article-section-2 .Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
+    else $('#experiment-article-section-2 .Q'+i+'-result').toggle().css('display','block').css('color','red').html('Wrong! correct answer is '+ans[i-1]);
+  }
+});
+</script>
