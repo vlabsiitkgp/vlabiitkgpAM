@@ -175,7 +175,7 @@ $(document).on("click", "#experiment-article-section-7 .quizSubmit", function ()
 });
 
 $(document).on("click", "#experiment-article-section-2 .quizSubmit", function () {
-  let ans = ['C','D','A','C' ];
+  let ans = ['B','A','A','C','B' ];
 
   for(let i=1;i<=ans.length;i++){
     if($('#experiment-article-section-2 input[name="q'+i+'"]:checked').val() == ans[i-1]) $('#experiment-article-section-2 .Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');

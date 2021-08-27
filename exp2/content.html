@@ -127,16 +127,55 @@
                                   <div class="content" id="experiment-article-section-2-content">
                                       <p style="text-align: justify; padding-bottom: 20px"> </p>
 
-                                <p>1. The mechanism of material removal in EDM process is</p>
+                                <p>1. The depth that the tool is plunged into the surface is called as ______</p>
                                 <div class="Q">
                                   <div class="Q1">
-                                      <input type="radio" name="q1" value ="A">Melting and Evaporation
-                                      <input type="radio" name="q1" value ="B">Melting and Corrosion
-                                      <input type="radio" name="q1" value ="C">Erosion and Cavitation
-                                      <input type="radio" name="q1" value ="D">Cavitation and Evaporation
+                                      <input type="radio" name="q1" value ="A">feed
+                                      <input type="radio" name="q1" value ="B">depth of cut
+                                      <input type="radio" name="q1" value ="C">depth of tool
+                                      <input type="radio" name="q1" value ="D">working depth
                                   </div>
                                   <p class= "Q1-result hide"></p>
                                   <br>
+                                  <p>2. Speed and position in CNC can be controlled using ______</p>
+                                  <div class="Q">
+                                    <div class="Q2">
+                                        <input type="radio" name="q2" value ="A">Slide table & Spindle
+                                        <input type="radio" name="q2" value ="B">Machine code unit
+                                        <input type="radio" name="q2" value ="C">Feedback system
+                                        <input type="radio" name="q2" value ="D">Graphic user interface
+                                    </div>
+                                    <p class= "Q2-result hide"></p>
+                                    <br>
+                                    <p>3. For CNC machining skilled part programmers are needed.</p>
+                                    <div class="Q">
+                                      <div class="Q3">
+                                          <input type="radio" name="q3" value ="A">True
+                                          <input type="radio" name="q3" value ="B">False
+                                      </div>
+                                      <p class= "Q3-result hide"></p>
+                                      <br>
+                                      <p>4.  In machining of a workpiece, the material is removed by_____</p>
+                                      <div class="Q">
+                                        <div class="Q4">
+                                            <input type="radio" name="q4" value ="A">drilling action
+                                            <input type="radio" name="q4" value ="B">melting action
+                                            <input type="radio" name="q4" value ="C">shearing acting
+                                            <input type="radio" name="q4" value ="D">using brittleness of the material
+                                        </div>
+                                        <p class= "Q4-result hide"></p>
+                                        <br>
+                                        <p>5. In how many ways CNC machine tool systems can be classified?</p>
+                                        <div class="Q">
+                                          <div class="Q5">
+                                              <input type="radio" name="q5" value ="A">2
+                                              <input type="radio" name="q5" value ="B">3
+                                              <input type="radio" name="q5" value ="C">4
+                                              <input type="radio" name="q5" value ="D">5
+                                          </div>
+                                          <p class= "Q5-result hide"></p>
+                                          <br>
+
                                   <button type="button" class="btn btn-success quizSubmit">Submit</button>
           					  </div>
 
@@ -415,7 +454,7 @@
                     });
 
                     $(document).on("click", "#experiment-article-section-2 .quizSubmit", function () {
-                      let ans = ['C','D','A','C' ];
+                      let ans = ['B','A','A','C','B' ];
 
                       for(let i=1;i<=ans.length;i++){
                         if($('#experiment-article-section-2 input[name="q'+i+'"]:checked').val() == ans[i-1]) $('#experiment-article-section-2 .Q'+i+'-result').css('display','block').css('color','green').html('Correct answer');
